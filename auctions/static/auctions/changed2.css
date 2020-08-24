@@ -1,0 +1,48 @@
+body {
+    padding: 15px;
+}
+
+.profile {
+	text-align: right;
+}
+
+
+.listings {
+	border: 1px;
+	border-style: solid;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+img {
+	width: 130px;
+	height: auto;
+}
+
+.listing_content {
+	position: absolute;
+	right: 160px;
+	background-color: blue;
+}
+
+.commentbox {
+	margin-top: 10px;
+	border-style: solid;
+	border-color: grey;
+	border-radius: 10px;
+	padding: 4px;
+}
+
+.login {
+	width: 20%;
+	position: absolute;
+	left: 600px;
+	margin-left: auto;
+}
+
+.message {
+	padding: 20px;
+ 	background-color: #bcfa70;
+ 	color: white;
+	margin-bottom: 15px;
+}

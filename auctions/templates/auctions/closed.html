@@ -1,0 +1,28 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+	
+	<div class='listings'>
+		<img src="{{ listing.pic_url }}">
+    	<div class="listing_content">
+    		<b>{{ listing.title }}</b><br>{{ listing.description }}<br>
+    		{%  if listing.bid.last %}
+    			<b>Current Price:</b> {{ listing.bid.last }}
+    			<div>
+    				
+    				{% if winner %}
+    					<div class="message">{{ winner.bidder }} is the winner of the auction on your product.</div>
+    				{% else %}
+    					<div class="wmessage">Sorry! Nobody bid on your product.</div>
+    				{% endif %}
+    				
+    			</div>
+    		{% else %}
+    			<b>Current Price:</b> ${{ listing.start_bid }}<br>
+    			<div class="wmessage">Sorry! No one bid on your product.</div>
+    		{% endif %}<br>
+    		<b>Category:</b> {{ listing.category }}
+    	</div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+	
+	{% if message %}
+		<div class="message">
+			<a href='{% url "close_auction" bought.id %}'>{{ message }}</a>
+		</div>
+	{% endif %}
+    	
+    	<h2>Active Listings</h2>
+
+    {% for listing in listings %}
+    	<div class='listings'>
+    		<a href = "{% url 'listing' listing.id %}" class="listing_link">
+    		<img src="{{ listing.pic_url }}">
+    			<div class="listing_content">
+    				<b>{{ listing.title }}</b><br>
+    					{{ listing.description }}<br>
+    				{%  if listing.bid.last %}
+    					Current Price: {{ listing.bid.last }}
+    				{% else %}
+    					<b>Current Price:</b> ${{ listing.start_bid }}
+    				{% endif %}<br>
+    					<b>Category:</b> {{ listing.category }}
+    			</div>
+    		</a>
+    	</div>
+    {% endfor %}
+
+{% endblock %}

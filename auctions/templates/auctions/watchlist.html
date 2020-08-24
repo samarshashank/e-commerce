@@ -1,0 +1,20 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+	<h2> Your WatchList</h2>
+	{% if message %} <div class="message">{{ message }}</div> {% endif %}
+	<div>
+		{% for listing in listings %}
+			<div class='listings'>
+    			<a href = "{% url 'listing' listing.id %}"><img src="{{ listing.pic_url }}">
+    			<div class="listing_content">
+    			<b>{{ listing.title }}</b><br>{{ listing.description }}<br><b>Current Price:</b> {{ listing.bid.last }}<br>
+    			<b>Category:</b> {{ listing.category }}
+    			</div>
+    			</a>
+    		</div>
+    	{% empty %}
+    	Ohh! You are not keeping an eye on any of the Active Products!
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -1,0 +1,168 @@
+body {
+    padding: 15px;
+    color: brown;
+}
+
+
+.header{
+	border-width: 2px;
+	border-style: solid;
+	padding: 5px;
+	color: #f0efdd;
+	background-color: brown;
+	height: 250px;
+
+}
+
+.header a{
+	position: relative;
+	top: 120px;
+	background-color: #dbdac1;
+	color: white;
+  	padding: 14px 25px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	margin-right: 2px;
+  	color: brown;
+}
+
+
+.header1 h2 {
+	display: inline-block;
+}
+
+
+.header1 a {
+	position: relative;
+	top: -45px;
+	float: right;
+	background-color: #dbdac1;
+	color: white;
+  	padding: 14px 25px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	margin-right: 2px;
+  	color: brown;
+}
+
+.header .profile {
+	float: right;
+	position: absolute;
+	text-align: center;
+	right: 20px;
+	top: 20px;
+	border-width: 1px;
+	border-style: solid;
+	width: 10%;
+	height: 240px;
+  	background-color: #dbdac1;
+  	color: brown;
+}
+
+.profile a {
+	background-color: brown;
+	position: relative;
+	top: 0px;
+	color: white;
+  	padding: 14px 25px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+}
+
+.profile img {
+	width: 50%;
+	height: auto;
+}
+
+
+.listings {
+	border: 1px;
+	border-style: solid;
+	padding: 10px;
+	margin-bottom: 10px;
+	background-color: #f0efdd;
+}
+
+.listings img {
+	position: relative;
+	top: 0px;
+	display: inline-block;
+	width: 170px;
+	height: auto;
+}
+
+.listing_content {
+	display: inline-block;
+	position: relative;
+	left: 70px;
+	background-color: #dbdac1;
+	width: 50%;
+	padding: 6px;
+}
+
+
+.listing_content a {
+	color: brown;
+}
+
+.commentbox {
+	margin-top: 10px;
+	border-style: solid;
+	border-color: grey;
+	border-radius: 10px;
+	padding: 4px;
+}
+
+.commentbox .comment_head {
+	text-align: center;
+	background-color: brown;
+	color: #f0efdd;
+}
+
+.commentbox .comment {
+	border-style: solid;
+	border-width: 1px;
+
+}
+
+.login {
+	width: 20%;
+	position: absolute;
+	left: 600px;
+	margin-left: auto;
+}
+
+.message {
+	padding: 20px;
+ 	background-color: #bcfa70;
+ 	color: white;
+	margin-bottom: 15px;
+}
+
+
+.footer {
+	margin-top: 35px;
+	color: #f0efdd;
+	background-color: brown;
+	padding: 15px;
+}
+
+.footer hr {
+	border-color: #dbdac1;
+}
+
+.contact img {
+	width: 3%;
+}
+
+.copyrights {
+	text-align: center;
+}
+
+.copyrights img {
+	width: 3%;
+	margin-right: 4px;
+}

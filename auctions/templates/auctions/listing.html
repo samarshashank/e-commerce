@@ -1,0 +1,69 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+	<div class="header1">
+		<h2>{{ item.title }}</h2>
+		{% if logged_in %}
+			<div class="linktowatch">
+				<a href='{% url "watchlist_an_item" item.id %}'>{{ logged_in }}</a>
+			</div>
+		{% endif %}
+
+		{% if close %}
+			<div class="linktoclose">
+				<a href='{% url "close_auction" item.id %}'>{{ close }}</a>
+			</div>
+		{% endif %}
+	</div><hr>
+	
+	<div class="listings">
+		<img src="{{ item.pic_url }}">
+	
+		<div class="listing_content">
+			{{ item.description }}<br>
+			<b>Brought to you by:</b> {{ item.seller }}<br>
+			{% if item.bid.last %}
+				<b>Current price:</b> {{ item.bid.last }}
+			{% else %}
+				<b>Current price:</b> ${{ item.start_bid }}(starting bid)
+			{% endif %}<hr>
+	
+			<div class="bidbox">
+				{% if logged_out %}
+					<div class="wmessage">{{ logged_out }}</div>
+				{% else %}
+					<form action="{% url 'listing' item.id %}" method="POST">
+						{% csrf_token %}
+			
+						<input type="number" name="bid" placeholder="Your Bid?">
+						<input type="submit" name="addbid" value="Place my Bid"><br>
+					</form>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="commentbox">
+		<div class="comment_head"><h5>Comment_BOX</h5></div><hr>
+		{% if logged_out %}
+			<div class="wmessage">{{ logged_out }}</div>
+		{% else %}
+
+			<form action="{% url 'listing' item.id %}" method = "POST">
+
+				{% csrf_token %}
+
+				{% for comment in comments %}
+					<div class="comment"><b>{{ comment.commenter }}</b>: {{ comment }}<br></div>
+				{% endfor %}<hr>
+			
+				<label for="nc"><strong>{{ user.username }}:</strong></label>
+				<input type="text" name="newcomment" id="nc" placeholder="Add comment" style="width: 80%">
+				<input type="submit" value="Add" name="comments">
+			</form>
+		
+		{% endif %}
+	</div>
+
+{% endblock %}
